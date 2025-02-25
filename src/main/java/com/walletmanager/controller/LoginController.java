@@ -1,9 +1,7 @@
 package com.walletmanager.controller;
 
 import javafx.scene.text.Text;
-import javafx.stage.Stage;
 import javafx.scene.control.TextField;
-import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.PasswordField;
 
 import java.io.IOException;
@@ -11,13 +9,8 @@ import java.io.IOException;
 import javafx.event.ActionEvent;
 
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.Node;
-import javafx.scene.control.Alert;
 
-public class LoginController {
+public class LoginController extends BaseController {
     @FXML
     private TextField usernameField;
 
@@ -45,13 +38,6 @@ public class LoginController {
     }
 
     private void openDashboard(ActionEvent event) throws IOException{
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/walletmanager/fxml/DashboardView.fxml"));
-        Parent root = loader.load();
-
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.setScene(new Scene(root));
-        stage.setTitle("Dashboard - WalletManager");
-        stage.centerOnScreen();
-        stage.show();
+        switchScene(event, "Dashboard - WalletManager", "/com/walletmanager/fxml/DashboardView.fxml");
     }
 }

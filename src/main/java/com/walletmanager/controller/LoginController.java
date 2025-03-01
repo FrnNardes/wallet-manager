@@ -26,9 +26,10 @@ public class LoginController extends BaseController {
         String password = passwordField.getText();
         
         if(authenticate(username, password)){
+            verifyLogin.setVisible(false);
             openDashboard(event);
         } else{
-            verifyLogin.setText("Usuário ou senha inválidos!");
+            verifyLogin.setVisible(true);
         }
     }
 

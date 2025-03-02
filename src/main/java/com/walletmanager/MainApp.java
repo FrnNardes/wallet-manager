@@ -8,7 +8,7 @@ import javafx.stage.Stage;
 
 public class MainApp extends Application {
 
-    @Override 
+    @Override
     public void start(Stage stage) throws Exception {
         // Importando o arquivo fxml
         Parent root = FXMLLoader.load(getClass().getResource("/com/walletmanager/fxml/LoginView.fxml"));
